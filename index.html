@@ -1,49 +1,73 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CYBERTWEAK — Jasa Oprek HP & Custom Software Android & iOS Professional</title>
+    <title>Jasa Oprek HP Android & iOS Professional | Root, KernelSU, Bypass M-Banking & Custom ROM</title>
+    <meta name="description" content="Layanan jasa oprek HP Android & iOS professional. Unlock Bootloader, Root KernelSU/APatch/Magisk Alpha, Bypass Play Integrity STRONG/DEVICE & M-Banking, Custom ROM, dan Jailbreak. Aman & Bergaransi.">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
                         cyber: {
-                            black: '#07090e',
-                            dark: '#0e131f',
-                            card: '#141c2e',
-                            border: '#1e293b',
-                            neon: '#22c55e',
+                            bg: '#090d16',
+                            card: '#111827',
+                            border: '#1f293d',
+                            primary: '#10b981',
                             cyan: '#06b6d4',
-                            purple: '#a855f7'
+                            purple: '#8b5cf6',
+                            accent: '#f59e0b'
                         }
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'Fira Code', 'monospace']
+                        mono: ['Fira Code', 'Consolas', 'Monaco', 'monospace']
                     }
                 }
             }
         }
     </script>
 
-    <!-- Google Fonts -->
+    <!-- Google Font & Font Awesome Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #07090e;
-            color: #f1f5f9;
+            background-color: #090d16;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        .glow-emerald {
+            box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.35);
+        }
+
+        .glow-cyan {
+            box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.35);
+        }
+
+        .glow-purple {
+            box-shadow: 0 0 25px -5px rgba(139, 92, 246, 0.35);
+        }
+
+        .cyber-grid {
+            background-image: radial-gradient(rgba(16, 185, 129, 0.12) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+
+        .glass-card {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         /* Custom Scrollbar */
@@ -51,1043 +75,877 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #07090e;
+            background: #090d16;
         }
         ::-webkit-scrollbar-thumb {
-            background: #1e293b;
+            background: #1f293d;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #06b6d4;
+            background: #10b981;
         }
 
-        /* Cyber Glow Effects */
-        .glow-neon {
-            box-shadow: 0 0 25px -5px rgba(34, 197, 94, 0.3);
+        @keyframes pulseSlow {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.05); }
         }
-        .glow-cyan {
-            box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.3);
-        }
-        .border-glow {
-            border: 1px solid rgba(6, 182, 212, 0.3);
-        }
-        .border-glow:hover {
-            border-color: rgba(34, 197, 94, 0.6);
-            box-shadow: 0 0 15px rgba(34, 197, 94, 0.2);
-        }
-
-        /* Grid Background pattern */
-        .bg-cyber-grid {
-            background-image: linear-gradient(to right, rgba(30, 41, 59, 0.3) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(30, 41, 59, 0.3) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-
-        /* Animated pulse background blur */
-        @keyframes float-pulse {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 0.6; transform: scale(1.1); }
-        }
-        .animate-glow-bg {
-            animation: float-pulse 6s infinite ease-in-out;
+        .animate-pulse-slow {
+            animation: pulseSlow 6s infinite ease-in-out;
         }
     </style>
 </head>
-<body class="bg-cyber-black text-slate-100 min-h-screen selection:bg-cyber-cyan selection:text-black relative">
-
-    <!-- Ambient Glowing Background Orbs -->
-    <div class="fixed top-0 left-1/4 w-96 h-96 bg-cyber-cyan/10 rounded-full blur-3xl pointer-events-none animate-glow-bg"></div>
-    <div class="fixed top-1/3 right-10 w-96 h-96 bg-cyber-neon/10 rounded-full blur-3xl pointer-events-none animate-glow-bg" style="animation-delay: 2s;"></div>
-    <div class="fixed bottom-10 left-10 w-96 h-96 bg-cyber-purple/10 rounded-full blur-3xl pointer-events-none animate-glow-bg" style="animation-delay: 4s;"></div>
-
-    <!-- HEADER / NAVIGATION -->
-    <header class="sticky top-0 z-40 backdrop-blur-md bg-cyber-black/80 border-b border-cyber-border/80 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo -->
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyber-cyan to-cyber-neon flex items-center justify-center text-cyber-black font-black text-xl shadow-lg shadow-cyber-cyan/20 group-hover:scale-105 transition-transform">
-                    <i class="fa-solid fa-microchip"></i>
-                </div>
-                <div>
-                    <span class="font-extrabold text-xl tracking-wider text-white">CYBER<span class="text-cyber-cyan">TWEAK</span></span>
-                    <span class="block text-[10px] font-mono text-cyber-neon uppercase tracking-widest">Lab & Modding Studio</span>
-                </div>
-            </a>
-
-            <!-- Desktop Nav Links -->
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-                <a href="#keunggulan" class="hover:text-cyber-cyan transition-colors">Keunggulan</a>
-                <a href="#layanan" class="hover:text-cyber-cyan transition-colors">Layanan</a>
-                <a href="#kompatibilitas" class="hover:text-cyber-cyan transition-colors flex items-center gap-1.5">
-                    <span>Cek HP Kamu</span>
-                    <span class="px-1.5 py-0.5 text-[10px] bg-cyber-cyan/20 text-cyber-cyan font-mono rounded-full border border-cyber-cyan/30">Auto Tool</span>
-                </a>
-                <a href="#harga" class="hover:text-cyber-cyan transition-colors">Harga</a>
-                <a href="#faq" class="hover:text-cyber-cyan transition-colors">FAQ</a>
-            </nav>
-
-            <!-- Header Action CTA & Online Indicator -->
-            <div class="hidden sm:flex items-center gap-4">
-                <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-950/40 border border-emerald-500/30 text-xs font-mono text-emerald-400">
-                    <span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                    </span>
-                    <span>TEKNISI ONLINE</span>
-                </div>
-                <a href="https://wa.me/6281234567890?text=Halo%20CyberTweak,%20saya%20mau%20konsultasi%20oprek%20HP" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-cyber-cyan to-cyber-neon text-cyber-black hover:opacity-90 transition-all shadow-md shadow-cyber-cyan/20 flex items-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>Konsultasi Gratis</span>
-                </a>
-            </div>
-
-            <!-- Mobile Menu Toggle Button -->
-            <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-300 hover:text-white focus:outline-none" aria-label="Toggle Navigation Menu">
-                <i class="fa-solid fa-bars text-2xl"></i>
-            </button>
-        </div>
-
-        <!-- Mobile Navigation Menu Dropdown -->
-        <div id="mobileMenu" class="hidden md:hidden bg-cyber-dark/95 border-b border-cyber-border px-4 pt-3 pb-6 space-y-3">
-            <a href="#keunggulan" class="block py-2 text-slate-300 hover:text-cyber-cyan">Keunggulan</a>
-            <a href="#layanan" class="block py-2 text-slate-300 hover:text-cyber-cyan">Daftar Layanan</a>
-            <a href="#kompatibilitas" class="block py-2 text-cyber-cyan font-medium">Cek Kompatibilitas Perangkat</a>
-            <a href="#harga" class="block py-2 text-slate-300 hover:text-cyber-cyan">Paket Harga</a>
-            <a href="#faq" class="block py-2 text-slate-300 hover:text-cyber-cyan">FAQ & Garansi</a>
-            <div class="pt-2 border-t border-cyber-border flex flex-col gap-2">
-                <a href="https://wa.me/6281234567890?text=Halo%20CyberTweak,%20saya%20mau%20konsultasi%20oprek%20HP" target="_blank" class="w-full text-center py-3 rounded-xl bg-cyber-neon text-cyber-black font-bold flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>Konsultasi WhatsApp</span>
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <!-- HERO SECTION -->
-        <section class="relative py-12 md:py-24 bg-cyber-grid overflow-hidden border-b border-cyber-border/50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    
-                    <!-- Hero Content Left -->
-                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                        
-                        <!-- Tech Tag Badge -->
-                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyber-card border border-cyber-cyan/30 text-xs font-mono text-cyber-cyan">
-                            <i class="fa-solid fa-terminal text-cyber-neon"></i>
-                            <span>Magisk • KernelSU • APatch • iOS Jailbreak • Custom ROM</span>
-                        </div>
-
-                        <!-- Main Heading -->
-                        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-                            Maksimalkan Performa <br class="hidden sm:inline"/>
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-cyan via-white to-cyber-neon">
-                                Smartphone Tanpa Batas
-                            </span>
-                        </h1>
-
-                        <!-- Subtitle -->
-                        <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                            Jasa oprek, root, unlock bootloader, custom ROM, dan unbrick HP Android & iOS paling aman, profesional, dan bergaransi. Bebaskan potensi maksimal perangkatmu untuk gaming & produktivitas!
-                        </p>
-
-                        <!-- Call To Actions -->
-                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-                            <a href="https://wa.me/6281234567890?text=Halo%20CyberTweak,%20saya%20mau%20konsultasi%20oprek%20smartphone" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-cyber-black bg-gradient-to-r from-cyber-neon to-cyber-cyan hover:brightness-110 transition-all shadow-lg shadow-cyber-neon/25 flex items-center justify-center gap-3 text-base">
-                                <i class="fa-brands fa-whatsapp text-xl"></i>
-                                <span>Konsultasi Sekarang</span>
-                            </a>
-                            <a href="#kompatibilitas" class="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-slate-200 bg-cyber-card hover:bg-slate-800 border border-cyber-border hover:border-cyber-cyan transition-all flex items-center justify-center gap-2 text-base">
-                                <i class="fa-solid fa-sliders text-cyber-cyan"></i>
-                                <span>Cek Biaya & Estimasi</span>
-                            </a>
-                        </div>
-
-                        <!-- Highlight Badges -->
-                        <div class="pt-6 grid grid-cols-3 gap-4 border-t border-cyber-border/60 max-w-lg mx-auto lg:mx-0">
-                            <div class="text-center lg:text-left">
-                                <p class="text-2xl font-black text-white font-mono">100%</p>
-                                <p class="text-xs text-slate-400 font-medium">Bypass M-Banking</p>
-                            </div>
-                            <div class="text-center lg:text-left">
-                                <p class="text-2xl font-black text-cyber-neon font-mono">99.9%</p>
-                                <p class="text-xs text-slate-400 font-medium">Tingkat Keberhasilan</p>
-                            </div>
-                            <div class="text-center lg:text-left">
-                                <p class="text-2xl font-black text-cyber-cyan font-mono">Remote</p>
-                                <p class="text-xs text-slate-400 font-medium">Bisa dari Mana Saja</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Hero Visual Right: Interactive Terminal Simulation -->
-                    <div class="lg:col-span-5">
-                        <div class="relative mx-auto max-w-md lg:max-w-none">
-                            
-                            <!-- Phone / Terminal Frame Container -->
-                            <div class="bg-cyber-dark border border-cyber-border rounded-2xl shadow-2xl overflow-hidden glow-cyan">
-                                
-                                <!-- Terminal Top Bar -->
-                                <div class="bg-slate-900 px-4 py-3 border-b border-cyber-border flex items-center justify-between">
-                                    <div class="flex items-center space-x-2">
-                                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                                    </div>
-                                    <div class="text-xs font-mono text-slate-400 flex items-center gap-1.5">
-                                        <i class="fa-solid fa-shield-halved text-cyber-neon text-xs"></i>
-                                        <span>cybertweak_flash_tool_v4.2.sh</span>
-                                    </div>
-                                    <div class="text-xs font-mono text-cyber-cyan">ADB/FASTBOOT</div>
-                                </div>
-
-                                <!-- Terminal Preset Tabs -->
-                                <div class="bg-slate-950 px-4 py-2 border-b border-cyber-border/60 flex space-x-2 text-xs font-mono overflow-x-auto">
-                                    <button onclick="setTerminalTab('root')" id="tab-root" class="px-3 py-1 rounded bg-cyber-card text-cyber-cyan font-semibold border border-cyber-cyan/30">Root & KernelSU</button>
-                                    <button onclick="setTerminalTab('rom')" id="tab-rom" class="px-3 py-1 rounded text-slate-400 hover:text-white">Custom ROM</button>
-                                    <button onclick="setTerminalTab('game')" id="tab-game" class="px-3 py-1 rounded text-slate-400 hover:text-white">Game Tweak</button>
-                                </div>
-
-                                <!-- Interactive Code Body -->
-                                <div class="p-4 sm:p-5 font-mono text-xs sm:text-sm bg-slate-950/90 text-slate-300 min-h-[280px] sm:min-h-[320px] flex flex-col justify-between" id="terminal-content">
-                                    <!-- Dynamic content inserted via JS -->
-                                </div>
-
-                                <!-- Terminal Footer Info -->
-                                <div class="bg-slate-900/80 px-4 py-2.5 border-t border-cyber-border flex items-center justify-between text-xs font-mono text-slate-400">
-                                    <span class="flex items-center gap-1.5">
-                                        <span class="w-2 h-2 rounded-full bg-cyber-neon"></span>
-                                        <span>DEVICE: CONNECTED (EDL/Fastboot)</span>
-                                    </span>
-                                    <span class="text-cyber-neon font-bold">PLAY INTEGRITY: PASS</span>
-                                </div>
-
-                            </div>
-
-                            <!-- Decorative Floating Badge -->
-                            <div class="absolute -bottom-5 -left-5 bg-cyber-card border border-cyber-neon/40 p-3.5 rounded-xl shadow-xl flex items-center gap-3 backdrop-blur-md hidden sm:flex">
-                                <div class="w-10 h-10 rounded-lg bg-cyber-neon/20 border border-cyber-neon flex items-center justify-center text-cyber-neon">
-                                    <i class="fa-solid fa-bolt text-lg"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs font-bold text-white">Unlock 90/120 FPS</p>
-                                    <p class="text-[11px] text-slate-400">Thermal Mod & Gaming Boost</p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- KEUNGGULAN SECTION (WHY CHOOSE US) -->
-        <section id="keunggulan" class="py-16 sm:py-24 bg-cyber-dark relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <!-- Section Header -->
-                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-                    <h2 class="text-xs font-mono font-bold tracking-widest text-cyber-cyan uppercase">— Kenapa Harus CyberTweak —</h2>
-                    <p class="text-2xl sm:text-4xl font-extrabold text-white">Standar Tinggi Pengerjaan Software HP</p>
-                    <p class="text-slate-400 text-sm sm:text-base">Kami tidak sekadar memasang custom software, tapi memastikan keamanan data, kestabilan OS, serta fungsionalitas m-banking Anda tetap terjaga 100%.</p>
-                </div>
-
-                <!-- 4 Pillars Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    
-                    <!-- Pillar 1 -->
-                    <div class="bg-cyber-card p-6 rounded-2xl border border-cyber-border border-glow transition-all duration-300 relative group">
-                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-shield-virus"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2">Jaminan Anti-Bootloop</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Prosedur flashing ketat berbasis backup NVRAM/EFS dan TWRP/OrangeFox recovery resmi. Meminimalisir risiko mati total.
-                        </p>
-                    </div>
-
-                    <!-- Pillar 2 -->
-                    <div class="bg-cyber-card p-6 rounded-2xl border border-cyber-border border-glow transition-all duration-300 relative group">
-                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-laptop-code"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2">Remote atau COD/Kirim</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Bisa dikerjakan secara jarak jauh (via TeamViewer/UltraViewer) jika PC & kabel data siap, atau kirim unit ke workshop kami.
-                        </p>
-                    </div>
-
-                    <!-- Pillar 3 -->
-                    <div class="bg-cyber-card p-6 rounded-2xl border border-cyber-border border-glow transition-all duration-300 relative group">
-                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-400 flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-building-columns"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2">Bypass M-Banking Safe</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Bypass Play Integrity (STRONG/DEVICE INTEGRITY), Zygisk/Shamiko setup. M-banking seperti BCA, Mandiri, BRI & DANA tetap aman.
-                        </p>
-                    </div>
-
-                    <!-- Pillar 4 -->
-                    <div class="bg-cyber-card p-6 rounded-2xl border border-cyber-border border-glow transition-all duration-300 relative group">
-                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-award"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-white mb-2">Garansi Pengerjaan</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Setiap pengerjaan mendapatkan garansi servis 7 hari hingga 30 hari. Bebas konsultasi pasca oprek tanpa biaya tambahan.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <!-- DAFTAR LAYANAN UTAMA SECTION -->
-        <section id="layanan" class="py-16 sm:py-24 bg-cyber-black relative border-t border-cyber-border/50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <!-- Section Header -->
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
-                    <div class="space-y-2">
-                        <h2 class="text-xs font-mono font-bold tracking-widest text-cyber-neon uppercase">— Spektrum Layanan —</h2>
-                        <p class="text-2xl sm:text-4xl font-extrabold text-white">Layanan Oprek HP Spesialis</p>
-                    </div>
-                    <p class="text-slate-400 text-sm max-w-md">
-                        Mencakup semua merek populer seperti Xiaomi, POCO, Samsung, Asus ROG, Realme, Google Pixel, hingga iPhone (Jailbreak).
-                    </p>
-                </div>
-
-                <!-- Services Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    
-                    <!-- Card 1: Root & UBL -->
-                    <div class="bg-cyber-card rounded-2xl p-6 sm:p-8 border border-cyber-border hover:border-cyber-cyan/50 transition-all flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="px-3 py-1 rounded-full text-xs font-mono bg-cyber-cyan/10 text-cyber-cyan border border-cyber-cyan/20">ROOT & BOOTLOADER</span>
-                                <i class="fa-solid fa-key text-2xl text-cyber-cyan"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-3">Unlock Bootloader (UBL) & Root Solution</h3>
-                            <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                                Membuka akses penuh sistem smartphone Anda secara aman dengan kerangka kerja root paling modern dan bersih.
-                            </p>
-                            
-                            <ul class="space-y-2.5 text-sm text-slate-300 mb-8 font-mono">
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon text-xs"></i>
-                                    <span>Magisk v27.x & Magisk Alpha Setup</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon text-xs"></i>
-                                    <span>KernelSU (KSU) & APatch Integration</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon text-xs"></i>
-                                    <span>Bypass UBL Xiaomi/POCO HyperOS Terbaru</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon text-xs"></i>
-                                    <span>Custom Recovery (TWRP / OrangeFox / Ofox)</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <a href="https://wa.me/6281234567890?text=Halo%20CyberTweak,%20saya%20butuh%20jasa%20Root%20dan%20UBL" target="_blank" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-cyber-cyan hover:text-cyber-black text-slate-200 font-semibold text-center text-sm transition-all border border-cyber-border flex items-center justify-center gap-2">
-                            <span>Tanya Detail Root</span>
-                            <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-
-                    <!-- Card 2: Custom ROM & Kernel -->
-                    <div class="bg-cyber-card rounded-2xl p-6 sm:p-8 border border-cyber-border hover:border-cyber-neon/50 transition-all flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="px-3 py-1 rounded-full text-xs font-mono bg-cyber-neon/10 text-cyber-neon border border-cyber-neon/20">OS CUSTOMIZATION</span>
-                                <i class="fa-solid fa-compact-disc text-2xl text-cyber-neon"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-3">Install Custom ROM & Custom Kernel</h3>
-                            <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                                Ganti tampilan stock ROM yang berat dengan Custom ROM bersih tanpa iklan, lebih enteng, dan hemat baterai.
-                            </p>
-                            
-                            <ul class="space-y-2.5 text-sm text-slate-300 mb-8 font-mono">
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon text-xs"></i>
-                                    <span>Pixel Experience / PixelOS (Stock Android Feel)</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon text-xs"></i>
-                                    <span>Evolution X, LineageOS, CrDroid</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon text-xs"></i>
-                                    <span>HyperOS / MIUI Mod Porting Gaming Edition</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon text-xs"></i>
-                                    <span>Custom Kernel (KSU Support, Overclock, Thermal Tweak)</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <a href="https://wa.me/6281234567890?text=Halo%20CyberTweak,%20saya%20mau%20install%20Custom%20ROM" target="_blank" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-cyber-neon hover:text-cyber-black text-slate-200 font-semibold text-center text-sm transition-all border border-cyber-border flex items-center justify-center gap-2">
-                            <span>Pilih Custom ROM</span>
-                            <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-
-                    <!-- Card 3: Fix & Rescue Software -->
-                    <div class="bg-cyber-card rounded-2xl p-6 sm:p-8 border border-cyber-border hover:border-red-500/50 transition-all flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="px-3 py-1 rounded-full text-xs font-mono bg-red-500/10 text-red-400 border border-red-500/20">UNBRICK & RECOVERY</span>
-                                <i class="fa-solid fa-kit-medical text-2xl text-red-400"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-3">Unbrick, Fix Bootloop & Bypass</h3>
-                            <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                                HP tersangkut logo, mati total software (Softbrick/Hardbrick EDL Mode), terlock akun Google (FRP) atau Mi Cloud.
-                            </p>
-                            
-                            <ul class="space-y-2.5 text-sm text-slate-300 mb-8 font-mono">
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon text-xs"></i>
-                                    <span>Fix Bootloop / Stuck Logo / Recovery Loop</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon text-xs"></i>
-                                    <span>Flashing via Auth EDL 9008 Mode (Qualcomm)</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon text-xs"></i>
-                                    <span>Bypass FRP Google Account & Bypass Mi Cloud Clean</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon text-xs"></i>
-                                    <span>Downgrade OS Android & Downgrade iOS (Jika Didukung)</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <a href="https://wa.me/6281234567890?text=Halo%20CyberTweak,%20HP%20saya%20bootloop/terkunci%20butuh%20perbaikan" target="_blank" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-red-500 hover:text-white text-slate-200 font-semibold text-center text-sm transition-all border border-cyber-border flex items-center justify-center gap-2">
-                            <span>Perbaiki Bootloop Now</span>
-                            <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-
-                    <!-- Card 4: Gaming & System Tweaking -->
-                    <div class="bg-cyber-card rounded-2xl p-6 sm:p-8 border border-cyber-border hover:border-purple-500/50 transition-all flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="px-3 py-1 rounded-full text-xs font-mono bg-purple-500/10 text-purple-400 border border-purple-500/20">GAMING BOOST</span>
-                                <i class="fa-solid fa-gamepad text-2xl text-purple-400"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-3">Gaming Tweaking & Thermal Mod</h3>
-                            <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                                Optimasi penuh untuk gamers kompetitif (Mobile Legends, PUBG Mobile, Genshin Impact, Honor of Kings).
-                            </p>
-                            
-                            <ul class="space-y-2.5 text-sm text-slate-300 mb-8 font-mono">
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon text-xs"></i>
-                                    <span>Debloat Bloatware (Hapus Aplikasi Bawaan Berat)</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon text-xs"></i>
-                                    <span>Unlock Refresh Rate 90FPS / 120FPS All Game</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon text-xs"></i>
-                                    <span>Modifikasi Thermal Engine (Cegah Frame Drop Panas)</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon text-xs"></i>
-                                    <span>Install Game Booster Kernel & Touch Sensitivity Mod</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <a href="https://wa.me/6281234567890?text=Halo%20CyberTweak,%20saya%20mau%20tweak%20gaming%20HP" target="_blank" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-purple-500 hover:text-white text-slate-200 font-semibold text-center text-sm transition-all border border-cyber-border flex items-center justify-center gap-2">
-                            <span>Boost Performa Gaming</span>
-                            <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <!-- INTERACTIVE CALCULATOR / DEVICE SIMULATOR SECTION -->
-        <section id="kompatibilitas" class="py-16 sm:py-24 bg-cyber-dark border-t border-cyber-border/60">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="bg-gradient-to-b from-cyber-card to-slate-950 p-6 sm:p-10 rounded-3xl border border-cyber-cyan/30 shadow-2xl relative overflow-hidden">
-                    
-                    <div class="max-w-3xl">
-                        <span class="px-3 py-1 rounded-full text-xs font-mono bg-cyber-cyan/20 text-cyber-cyan border border-cyber-cyan/40">INTERACTIVE TOOL</span>
-                        <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-3 mb-2">Simulasi & Cek Kompatibilitas Perangkat</h2>
-                        <p class="text-slate-400 text-sm sm:text-base mb-8">Pilih merek HP dan kebutuhan Anda di bawah ini untuk melihat estimasi waktu pengerjaan, tingkat kesulitan, serta rekomendasi penanganan.</p>
-                    </div>
-
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                        
-                        <!-- Form Inputs -->
-                        <div class="lg:col-span-7 space-y-5">
-                            
-                            <!-- Brand Selection -->
-                            <div>
-                                <label class="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-2">1. Pilih Merek HP / Brand:</label>
-                                <select id="brandSelect" onchange="calculateCompatibility()" class="w-full bg-slate-900 border border-cyber-border rounded-xl px-4 py-3.5 text-slate-100 font-medium focus:border-cyber-cyan focus:outline-none transition-colors">
-                                    <option value="xiaomi">Xiaomi / POCO (Redmi, Mi Series, POCO F/X)</option>
-                                    <option value="samsung">Samsung Galaxy (A Series, S Series, Z Fold)</option>
-                                    <option value="rog">Asus ROG Phone / Zenfone</option>
-                                    <option value="realme">Realme & Oppo Series</option>
-                                    <option value="pixel">Google Pixel (Pixel 4 - 8 Pro)</option>
-                                    <option value="ios">Apple iPhone (iOS Jailbreak/Tweaks)</option>
-                                    <option value="other">Merek Lain (Vivo, Infinix, Tecno, Meizu)</option>
-                                </select>
-                            </div>
-
-                            <!-- Specific Model Input (Optional) -->
-                            <div>
-                                <label class="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-2">2. Tipe HP Lengkap (Opsional):</label>
-                                <input type="text" id="modelInput" placeholder="Contoh: POCO F5 5G / Samsung S20 FE / Redmi Note 10 Pro" class="w-full bg-slate-900 border border-cyber-border rounded-xl px-4 py-3.5 text-slate-100 placeholder-slate-500 focus:border-cyber-cyan focus:outline-none transition-colors">
-                            </div>
-
-                            <!-- Service Need Selection -->
-                            <div>
-                                <label class="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-2">3. Pilih Jenis Kebutuhan Oprek:</label>
-                                <select id="serviceSelect" onchange="calculateCompatibility()" class="w-full bg-slate-900 border border-cyber-border rounded-xl px-4 py-3.5 text-slate-100 font-medium focus:border-cyber-cyan focus:outline-none transition-colors">
-                                    <option value="ubl_root">Unlock Bootloader (UBL) + Root Magisk/KSU</option>
-                                    <option value="custom_rom">Pasang Custom ROM Gaming / Pixel Experience</option>
-                                    <option value="gaming_debloat">Optimasi Gaming + Thermal Mod + Unlock FPS</option>
-                                    <option value="unbrick">Perbaikan Bootloop / Stuck Logo / Softbrick</option>
-                                    <option value="bypass">Bypass FRP Google / Mi Cloud Lock</option>
-                                </select>
-                            </div>
-
-                            <!-- Service Type Option -->
-                            <div>
-                                <label class="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-2">4. Metode Pengerjaan yang Diinginkan:</label>
-                                <div class="grid grid-cols-2 gap-3">
-                                    <label class="cursor-pointer">
-                                        <input type="radio" name="methodRadio" value="remote" checked onchange="calculateCompatibility()" class="peer sr-only">
-                                        <div class="p-3 bg-slate-900 border border-cyber-border rounded-xl text-center peer-checked:border-cyber-cyan peer-checked:bg-cyber-cyan/10 peer-checked:text-cyber-cyan transition-all text-xs sm:text-sm font-semibold">
-                                            <i class="fa-solid fa-wifi mb-1 block"></i>
-                                            Remote (Jarak Jauh)
-                                        </div>
-                                    </label>
-                                    <label class="cursor-pointer">
-                                        <input type="radio" name="methodRadio" value="cod" onchange="calculateCompatibility()" class="peer sr-only">
-                                        <div class="p-3 bg-slate-900 border border-cyber-border rounded-xl text-center peer-checked:border-cyber-cyan peer-checked:bg-cyber-cyan/10 peer-checked:text-cyber-cyan transition-all text-xs sm:text-sm font-semibold">
-                                            <i class="fa-solid fa-box-archive mb-1 block"></i>
-                                            Kirim Unit / COD
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Result Card Box -->
-                        <div class="lg:col-span-5 bg-slate-950 p-6 rounded-2xl border border-cyber-border space-y-5">
-                            <div class="flex items-center justify-between border-b border-cyber-border pb-3">
-                                <span class="font-mono text-xs text-cyber-neon flex items-center gap-1.5">
-                                    <i class="fa-solid fa-calculator"></i>
-                                    <span>ESTIMASI HASIL</span>
-                                </span>
-                                <span id="statusBadge" class="px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-emerald-950 text-emerald-400 border border-emerald-500/30">SUPPORTED</span>
-                            </div>
-
-                            <div class="space-y-4">
-                                <div>
-                                    <p class="text-xs text-slate-400 font-mono">Estimasi Durasi Pengerjaan:</p>
-                                    <p id="estTime" class="text-xl font-bold text-white">30 - 60 Menit</p>
-                                </div>
-
-                                <div>
-                                    <p class="text-xs text-slate-400 font-mono">Catatan Syarat / Tunggu UBL:</p>
-                                    <p id="estNote" class="text-xs text-amber-400 bg-amber-950/30 p-2.5 rounded-lg border border-amber-500/20 mt-1 leading-relaxed">
-                                        Xiaomi HyperOS memerlukan pendaftaran akun Mi 72 jam atau bypass instant jika chipset didukung.
-                                    </p>
-                                </div>
-
-                                <div>
-                                    <p class="text-xs text-slate-400 font-mono">Status Play Integrity & M-Banking:</p>
-                                    <div class="flex items-center gap-2 mt-1">
-                                        <span class="w-2.5 h-2.5 rounded-full bg-cyber-neon animate-pulse"></span>
-                                        <span id="estIntegrity" class="text-sm font-semibold text-slate-200">100% Pass Device Integrity (M-Banking Aman)</span>
-                                    </div>
-                                </div>
-
-                                <div class="pt-2 border-t border-cyber-border">
-                                    <p class="text-xs text-slate-400 font-mono">Estimasi Biaya Mulai Dari:</p>
-                                    <p id="estPrice" class="text-2xl font-black text-cyber-cyan font-mono">Rp 75.000 - Rp 150.000</p>
-                                </div>
-                            </div>
-
-                            <button onclick="sendCalculatedWhatsApp()" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyber-cyan to-cyber-neon text-cyber-black font-extrabold text-sm shadow-lg shadow-cyber-cyan/20 hover:brightness-110 transition-all flex items-center justify-center gap-2">
-                                <i class="fa-brands fa-whatsapp text-lg"></i>
-                                <span>Order via WA Dengan Detail Ini</span>
-                            </button>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <!-- PAKET HARGA SECTION -->
-        <section id="harga" class="py-16 sm:py-24 bg-cyber-black relative border-t border-cyber-border/50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <!-- Section Header -->
-                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-                    <h2 class="text-xs font-mono font-bold tracking-widest text-cyber-cyan uppercase">— Biaya Transparan —</h2>
-                    <p class="text-2xl sm:text-4xl font-extrabold text-white">Paket Harga & Biaya Service</p>
-                    <p class="text-slate-400 text-sm sm:text-base">Tanpa biaya tersembunyi. Konsultasi dan cek masalah diawal selalu gratis!</p>
-                </div>
-
-                <!-- Price Cards Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    
-                    <!-- Package 1: Basic -->
-                    <div class="bg-cyber-card rounded-3xl p-8 border border-cyber-border flex flex-col justify-between hover:border-slate-600 transition-all">
-                        <div>
-                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-slate-800 text-slate-300">BASIC TWEAK</span>
-                            <h3 class="text-xl font-bold text-white mt-4">Debloat & Optimize</h3>
-                            <p class="text-xs text-slate-400 mt-1">Tanpa perlu unlock bootloader/root</p>
-                            
-                            <div class="my-6">
-                                <span class="text-3xl font-black text-white font-mono">Rp 50.000</span>
-                                <span class="text-xs text-slate-400">/ unit</span>
-                            </div>
-
-                            <ul class="space-y-3 text-sm text-slate-300 font-mono mb-8">
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon"></i>
-                                    <span>Debloat Iklan & App Bawaan</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon"></i>
-                                    <span>Disable Tracking & System Lag</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon"></i>
-                                    <span>RAM & Storage Cleaner Mod</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon"></i>
-                                    <span>Garansi Servis 7 Hari</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <a href="https://wa.me/6281234567890?text=Halo%20CyberTweak,%20saya%20mau%20pesan%20Paket%20Basic%20Debloat" target="_blank" class="w-full py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-center text-sm transition-all border border-cyber-border">
-                            Pesan Paket Basic
-                        </a>
-                    </div>
-
-                    <!-- Package 2: Full Oprek (POPULAR) -->
-                    <div class="bg-gradient-to-b from-cyber-card via-slate-900 to-cyber-card rounded-3xl p-8 border-2 border-cyber-cyan shadow-2xl glow-cyan flex flex-col justify-between relative">
-                        <!-- Popular Tag -->
-                        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-cyber-cyan to-cyber-neon text-cyber-black text-[11px] font-mono font-extrabold px-4 py-1 rounded-full uppercase tracking-wider shadow-md">
-                            Paling Populer
-                        </div>
-
-                        <div>
-                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-cyber-cyan/20 text-cyber-cyan border border-cyber-cyan/30">PRO FULL SUITE</span>
-                            <h3 class="text-2xl font-extrabold text-white mt-4">Full Oprek + Custom ROM</h3>
-                            <p class="text-xs text-slate-400 mt-1">Solusi komplit untuk performa rata kanan</p>
-                            
-                            <div class="my-6">
-                                <span class="text-4xl font-black text-cyber-cyan font-mono">Rp 120.000</span>
-                                <span class="text-xs text-slate-400">/ unit</span>
-                            </div>
-
-                            <ul class="space-y-3 text-sm text-slate-200 font-mono mb-8">
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon"></i>
-                                    <span>Unlock Bootloader (UBL)</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon"></i>
-                                    <span>Install Custom ROM / Kernel</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon"></i>
-                                    <span>Root Magisk / KernelSU / APatch</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon"></i>
-                                    <span>Fix Play Integrity & M-Banking 100%</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon"></i>
-                                    <span>Thermal Tweak + Unlock 90/120 FPS</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon"></i>
-                                    <span>Garansi Servis 30 Hari</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <a href="https://wa.me/6281234567890?text=Halo%20CyberTweak,%20saya%20mau%20pesan%20Paket%20Full%20Oprek%20Custom%20ROM" target="_blank" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyber-cyan to-cyber-neon text-cyber-black font-extrabold text-center text-sm shadow-lg hover:brightness-110 transition-all">
-                            Pesan Paket Full Suite
-                        </a>
-                    </div>
-
-                    <!-- Package 3: Rescue / Unbrick -->
-                    <div class="bg-cyber-card rounded-3xl p-8 border border-cyber-border flex flex-col justify-between hover:border-slate-600 transition-all">
-                        <div>
-                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-red-500/10 text-red-400 border border-red-500/20">RESCUE & BYPASS</span>
-                            <h3 class="text-xl font-bold text-white mt-4">Unbrick & Fix Software</h3>
-                            <p class="text-xs text-slate-400 mt-1">Penanganan masalah darurat software</p>
-                            
-                            <div class="my-6">
-                                <span class="text-3xl font-black text-white font-mono">Rp 100.000</span>
-                                <span class="text-xs text-slate-400">/ unit</span>
-                            </div>
-
-                            <ul class="space-y-3 text-sm text-slate-300 font-mono mb-8">
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon"></i>
-                                    <span>Fix Bootloop / Stuck Logo / Fastboot</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon"></i>
-                                    <span>Flashing Stock OS Auth Firmware</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon"></i>
-                                    <span>Bypass FRP Google Account</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon"></i>
-                                    <span>Bypass Mi Cloud Clean</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <i class="fa-solid fa-check text-cyber-neon"></i>
-                                    <span>Garansi Servis 14 Hari</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <a href="https://wa.me/6281234567890?text=Halo%20CyberTweak,%20saya%20mau%20pesan%20Paket%20Unbrick/Fix%20Software" target="_blank" class="w-full py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-center text-sm transition-all border border-cyber-border">
-                            Pesan Paket Rescue
-                        </a>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <!-- BANNER KEAMANAN M-BANKING & PLAY INTEGRITY -->
-        <section class="py-12 bg-cyber-dark border-y border-cyber-border/60">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-slate-900/80 rounded-2xl p-6 sm:p-8 border border-cyber-neon/30 flex flex-col md:flex-row items-center justify-between gap-6">
-                    <div class="flex items-center gap-5">
-                        <div class="w-14 h-14 rounded-2xl bg-cyber-neon/10 border border-cyber-neon text-cyber-neon flex items-center justify-center text-2xl shrink-0">
-                            <i class="fa-solid fa-user-shield"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-white">Khawatir M-Banking Tidak Bisa Terbuka?</h3>
-                            <p class="text-slate-400 text-sm mt-1">
-                                Kami mengintegrasikan module **Play Integrity Fix (MEETS_DEVICE_INTEGRITY)** & **Shamiko/Zygisk Hide** terbaru. Aplikasi BCA Mobile, Livin Mandiri, BRImo, DANA, dan ShopeePay tetap berjalan normal 100%.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="shrink-0 w-full md:w-auto">
-                        <a href="https://wa.me/6281234567890?text=Halo%20CyberTweak,%20mau%20tanya%20keamanan%20m-banking" target="_blank" class="px-6 py-3 rounded-xl bg-cyber-neon/20 hover:bg-cyber-neon hover:text-cyber-black text-cyber-neon font-bold text-xs font-mono transition-all border border-cyber-neon/40 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-shield-check"></i>
-                            <span>Tanyakan Bypass M-Banking</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ ACCORDION SECTION -->
-        <section id="faq" class="py-16 sm:py-24 bg-cyber-black relative">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="text-center mb-16 space-y-3">
-                    <h2 class="text-xs font-mono font-bold tracking-widest text-cyber-cyan uppercase">— Paling Sering Ditanyakan —</h2>
-                    <p class="text-2xl sm:text-4xl font-extrabold text-white">Frequently Asked Questions (FAQ)</p>
-                </div>
-
-                <!-- FAQ Accordion List -->
-                <div class="space-y-4">
-                    
-                    <!-- FAQ Item 1 -->
-                    <div class="bg-cyber-card rounded-2xl border border-cyber-border overflow-hidden">
-                        <button onclick="toggleFaq('faq-1')" class="w-full px-6 py-4 text-left font-bold text-slate-100 hover:text-cyber-cyan flex items-center justify-between transition-colors">
-                            <span>Apakah data di HP saya akan hilang saat oprek?</span>
-                            <i id="icon-faq-1" class="fa-solid fa-chevron-down text-cyber-cyan transition-transform duration-300"></i>
-                        </button>
-                        <div id="faq-1" class="hidden px-6 pb-5 text-sm text-slate-400 leading-relaxed border-t border-cyber-border/40 pt-4">
-                            Untuk proses Unlock Bootloader (UBL) dan Install Custom ROM, data internal HP **pasti terhapus** sesuai protokol keamanan Android. Namun untuk opsi tertentu seperti Root saja (jika bootloader sudah terbuka) atau Debloat, data bisa dipertahankan. Kami selalu mengingatkan klien untuk melakukan backup terlebih dahulu.
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 2 -->
-                    <div class="bg-cyber-card rounded-2xl border border-cyber-border overflow-hidden">
-                        <button onclick="toggleFaq('faq-2')" class="w-full px-6 py-4 text-left font-bold text-slate-100 hover:text-cyber-cyan flex items-center justify-between transition-colors">
-                            <span>Bagaimana cara kerja Oprek Jarak Jauh (Remote Service)?</span>
-                            <i id="icon-faq-2" class="fa-solid fa-chevron-down text-cyber-cyan transition-transform duration-300"></i>
-                        </button>
-                        <div id="faq-2" class="hidden px-6 pb-5 text-sm text-slate-400 leading-relaxed border-t border-cyber-border/40 pt-4">
-                            Sangat mudah! Anda hanya membutuhkan Laptop/PC Windows yang terhubung internet stabil dan kabel data Original HP. Kami akan memandu langkah instalasi aplikasi remote (UltraViewer / TeamViewer / Anydesk), lalu teknisi kami akan mengendalikan proses eksekusi dari jarak jauh.
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 3 -->
-                    <div class="bg-cyber-card rounded-2xl border border-cyber-border overflow-hidden">
-                        <button onclick="toggleFaq('faq-3')" class="w-full px-6 py-4 text-left font-bold text-slate-100 hover:text-cyber-cyan flex items-center justify-between transition-colors">
-                            <span>Apakah aman untuk aplikasi m-banking & e-wallet?</span>
-                            <i id="icon-faq-3" class="fa-solid fa-chevron-down text-cyber-cyan transition-transform duration-300"></i>
-                        </button>
-                        <div id="faq-3" class="hidden px-6 pb-5 text-sm text-slate-400 leading-relaxed border-t border-cyber-border/40 pt-4">
-                            Sangat aman. Kami menggunakan konfigurasi Magisk / KernelSU modern yang disandingkan dengan Play Integrity Fix Module, Zygisk, dan Shamiko Hiding. HP Anda tetap lolos tes *STRONG INTEGRITY* sehingga aplikasi BCA Mobile, Livin, BRImo, DANA, OVO, Shopee, dan GoPay bisa dipakai normal tanpa terdeteksi root.
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 4 -->
-                    <div class="bg-cyber-card rounded-2xl border border-cyber-border overflow-hidden">
-                        <button onclick="toggleFaq('faq-4')" class="w-full px-6 py-4 text-left font-bold text-slate-100 hover:text-cyber-cyan flex items-center justify-between transition-colors">
-                            <span>Berapa lama garansi yang diberikan jika terjadi kendala?</span>
-                            <i id="icon-faq-4" class="fa-solid fa-chevron-down text-cyber-cyan transition-transform duration-300"></i>
-                        </button>
-                        <div id="faq-4" class="hidden px-6 pb-5 text-sm text-slate-400 leading-relaxed border-t border-cyber-border/40 pt-4">
-                            Garansi pengerjaan berlaku 7 hingga 30 hari (tergantung paket yang dipilih). Jika ada kegagalan modul, Play Integrity terdeteksi kembali akibat update Google, atau ada bug sistem pasca flashing, kami berikan re-fix **GRATIS** selama masa garansi!
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="bg-cyber-dark border-t border-cyber-border text-slate-400 py-12">
+<body class="antialiased selection:bg-emerald-500 selection:text-black">
+
+    <!-- Ambient Glow Backgrounds -->
+    <div class="fixed top-0 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none animate-pulse-slow"></div>
+    <div class="fixed top-1/3 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none animate-pulse-slow" style="animation-delay: 2s;"></div>
+    <div class="fixed bottom-10 left-1/3 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl pointer-events-none animate-pulse-slow" style="animation-delay: 4s;"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 glass-card border-b border-gray-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-                
-                <!-- Col 1: Brand Info -->
-                <div class="md:col-span-2 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-8 h-8 rounded-lg bg-cyber-cyan flex items-center justify-center text-cyber-black font-black">
-                            <i class="fa-solid fa-microchip"></i>
-                        </div>
-                        <span class="font-extrabold text-lg text-white">CYBER<span class="text-cyber-cyan">TWEAK</span></span>
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-400 to-cyan-600 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+                        <i class="fa-solid fa-terminal text-black text-lg"></i>
                     </div>
-                    <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
-                        Penyedia jasa modifikasi software smartphone profesional sejak 2019. Melayani root, custom ROM, unbrick, dan gaming tweak dengan garansi aman & terpercaya.
+                    <div>
+                        <span class="text-xl font-extrabold tracking-wider bg-gradient-to-r from-emerald-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent">OPREKX</span>
+                        <span class="text-xs text-emerald-400 font-mono block tracking-tight -mt-1">CYBER LAB LABS</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-300">
+                    <a href="#fitur" class="hover:text-emerald-400 transition-colors">Fitur</a>
+                    <a href="#simulator" class="hover:text-emerald-400 transition-colors">Cek Perangkat</a>
+                    <a href="#layanan" class="hover:text-emerald-400 transition-colors">Layanan</a>
+                    <a href="#garansi" class="hover:text-emerald-400 transition-colors">Garansi Banking</a>
+                    <a href="#harga" class="hover:text-emerald-400 transition-colors">Paket Harga</a>
+                    <a href="#faq" class="hover:text-emerald-400 transition-colors">FAQ</a>
+                </div>
+
+                <!-- Action Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="#order-section" class="px-5 py-2.5 rounded-xl font-semibold text-xs tracking-wider uppercase bg-gradient-to-r from-emerald-500 to-cyan-500 text-black hover:from-emerald-400 hover:to-cyan-400 transition-all transform hover:-translate-y-0.5 shadow-lg shadow-emerald-500/20">
+                        <i class="fa-solid fa-paper-plane mr-2"></i>Order Sekarang
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" type="button" class="text-gray-400 hover:text-white p-2 rounded-lg focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-800 bg-gray-900/95 px-4 pt-3 pb-6 space-y-3">
+            <a href="#fitur" class="block text-gray-300 hover:text-emerald-400 py-2">Fitur Utama</a>
+            <a href="#simulator" class="block text-gray-300 hover:text-emerald-400 py-2">Cek Perangkat Simulator</a>
+            <a href="#layanan" class="block text-gray-300 hover:text-emerald-400 py-2">Layanan Oprek</a>
+            <a href="#garansi" class="block text-gray-300 hover:text-emerald-400 py-2">Garansi M-Banking</a>
+            <a href="#harga" class="block text-gray-300 hover:text-emerald-400 py-2">Daftar Paket</a>
+            <a href="#faq" class="block text-gray-300 hover:text-emerald-400 py-2">FAQ</a>
+            <a href="#order-section" class="block text-center py-3 bg-emerald-500 text-black font-bold rounded-xl mt-4">Order Sekarang</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-20 overflow-hidden cyber-grid">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full glass-card border-emerald-500/40 text-emerald-400 text-xs font-mono">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        <span>UPDATE 2026: PLAY INTEGRITY STRONG & DEVICE BYPASS SUPPORTED</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+                        Jasa Oprek <span class="bg-gradient-to-r from-emerald-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent">Android & iOS</span> Professional
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-gray-300 max-w-2xl font-normal leading-relaxed">
+                        Maksimalkan potensi smartphone Anda. Unlock Bootloader, Root stealth <strong class="text-emerald-400">KernelSU / APatch / Magisk Alpha</strong>, Bypass Play Integrity & M-Banking (BCA, Mandiri, BRI, DANA), Custom ROM, hingga Jailbreak iOS.
                     </p>
-                    <div class="flex items-center space-x-4 pt-2">
-                        <a href="#" class="w-9 h-9 rounded-lg bg-cyber-card border border-cyber-border flex items-center justify-center text-slate-300 hover:text-cyber-cyan hover:border-cyber-cyan transition-all">
-                            <i class="fa-brands fa-telegram text-base"></i>
+
+                    <!-- Feature Badges -->
+                    <div class="pt-2 flex flex-wrap gap-2 justify-center lg:justify-start text-xs font-medium text-gray-300">
+                        <span class="px-3 py-1 rounded-lg bg-gray-800/90 border border-gray-700 flex items-center gap-1.5">
+                            <i class="fa-solid fa-shield-halved text-emerald-400"></i> M-Banking Safe
+                        </span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800/90 border border-gray-700 flex items-center gap-1.5">
+                            <i class="fa-solid fa-bolt text-cyan-400"></i> Pengerjaan Cepat
+                        </span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800/90 border border-gray-700 flex items-center gap-1.5">
+                            <i class="fa-solid fa-headset text-purple-400"></i> Remote & COD
+                        </span>
+                        <span class="px-3 py-1 rounded-lg bg-gray-800/90 border border-gray-700 flex items-center gap-1.5">
+                            <i class="fa-solid fa-rotate-left text-amber-400"></i> Garansi 30 Hari
+                        </span>
+                    </div>
+
+                    <!-- Call To Action Buttons -->
+                    <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#simulator" class="px-7 py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-emerald-500 to-cyan-500 text-black hover:from-emerald-400 hover:to-cyan-400 transition-all shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-calculator text-base"></i> Cek Estimasi & Oprek
                         </a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-cyber-card border border-cyber-border flex items-center justify-center text-slate-300 hover:text-cyber-cyan hover:border-cyber-cyan transition-all">
-                            <i class="fa-brands fa-github text-base"></i>
-                        </a>
-                        <a href="#" class="w-9 h-9 rounded-lg bg-cyber-card border border-cyber-border flex items-center justify-center text-slate-300 hover:text-cyber-cyan hover:border-cyber-cyan transition-all">
-                            <i class="fa-brands fa-youtube text-base"></i>
+                        <a href="https://wa.me/6281234567890?text=Halo%20Admin%20OprekX,%20saya%20mau%20konsultasi%20jasa%20oprek%20HP" target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-xl font-bold text-sm glass-card hover:bg-gray-800 text-white border border-gray-700 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i> Konsultasi Admin WA
                         </a>
                     </div>
                 </div>
 
-                <!-- Col 2: Quick Links -->
-                <div>
-                    <h4 class="text-xs font-mono font-bold text-white uppercase tracking-wider mb-4">Navigasi Layanan</h4>
-                    <ul class="space-y-2 text-xs font-mono">
-                        <li><a href="#layanan" class="hover:text-cyber-cyan transition-colors">Root Magisk & KernelSU</a></li>
-                        <li><a href="#layanan" class="hover:text-cyber-cyan transition-colors">Install Custom ROM</a></li>
-                        <li><a href="#layanan" class="hover:text-cyber-cyan transition-colors">Unbrick EDL Mode</a></li>
-                        <li><a href="#layanan" class="hover:text-cyber-cyan transition-colors">Bypass FRP & Mi Cloud</a></li>
-                        <li><a href="#layanan" class="hover:text-cyber-cyan transition-colors">Gaming Thermal Tweak</a></li>
+                <!-- Hero Interactive Terminal Simulator -->
+                <div class="lg:col-span-5">
+                    <div class="glass-card rounded-2xl overflow-hidden border border-emerald-500/30 shadow-2xl shadow-emerald-500/10">
+                        <!-- Terminal Window Top Bar -->
+                        <div class="bg-gray-900/90 px-4 py-3 border-b border-gray-800 flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-green-500 inline-block"></span>
+                            </div>
+                            <span class="text-xs font-mono text-gray-400 flex items-center gap-1">
+                                <i class="fa-solid fa-code-branch text-emerald-400"></i> oprekx-adb-terminal v4.8
+                            </span>
+                        </div>
+
+                        <!-- Terminal Navigation Tabs -->
+                        <div class="bg-gray-950/80 px-2 pt-2 border-b border-gray-800/80 flex text-xs font-mono gap-1 overflow-x-auto">
+                            <button onclick="switchTerminalTab('tab-adb')" id="btn-tab-adb" class="term-tab px-3 py-1.5 rounded-t-lg bg-gray-800 text-emerald-400 font-medium border-t border-x border-gray-700">ADB Console</button>
+                            <button onclick="switchTerminalTab('tab-ksu')" id="btn-tab-ksu" class="term-tab px-3 py-1.5 rounded-t-lg text-gray-400 hover:text-gray-200">KernelSU</button>
+                            <button onclick="switchTerminalTab('tab-pi')" id="btn-tab-pi" class="term-tab px-3 py-1.5 rounded-t-lg text-gray-400 hover:text-gray-200">Play Integrity</button>
+                            <button onclick="switchTerminalTab('tab-mbanking')" id="btn-tab-mbanking" class="term-tab px-3 py-1.5 rounded-t-lg text-gray-400 hover:text-gray-200">M-Banking Test</button>
+                        </div>
+
+                        <!-- Terminal Output Display -->
+                        <div class="p-4 font-mono text-xs h-72 overflow-y-auto bg-gray-950/90 text-gray-300 space-y-2 leading-relaxed" id="terminal-content">
+                            <!-- Tab ADB Shell Content -->
+                            <div id="tab-adb" class="term-pane space-y-1">
+                                <p class="text-gray-500">$ adb devices</p>
+                                <p class="text-emerald-400">List of devices attached</p>
+                                <p class="text-cyan-300">2b8a7f9c310d0a    device (Xiaomi 13T / Android 14)</p>
+                                <p class="text-gray-500">$ adb reboot bootloader</p>
+                                <p class="text-yellow-400">[+] Device rebooting into Fastboot mode...</p>
+                                <p class="text-gray-500">$ fastboot oem unlock</p>
+                                <p class="text-emerald-400">[SUCCESS] Bootloader status: UNLOCKED!</p>
+                                <p class="text-gray-500">$ fastboot flash boot boot_patched_ksu.img</p>
+                                <p class="text-emerald-300">Sending 'boot' (65536 KB)... OKAY [  1.420s]</p>
+                                <p class="text-emerald-300">Writing 'boot'... OKAY [  0.310s]</p>
+                                <p class="text-purple-400">[✓] KernelSU LKM Injector initialized successfully.</p>
+                            </div>
+
+                            <!-- Tab KernelSU -->
+                            <div id="tab-ksu" class="term-pane hidden space-y-1">
+                                <p class="text-emerald-400 font-bold">[+] KERNELSU STATUS REPORT</p>
+                                <p>Kernel Version: 5.15.110-android14-custom</p>
+                                <p>KSU Version: 0.9.5 (Kernel Level Hook)</p>
+                                <p class="text-green-400">[PASS] SU Binary stealth mode enabled.</p>
+                                <p class="text-green-400">[PASS] /system mount read-only clean.</p>
+                                <p class="text-green-400">[PASS] Zygisk Next & SusFS active.</p>
+                                <p class="text-cyan-300">All root detection vectors bypassed with 0 trace.</p>
+                            </div>
+
+                            <!-- Tab Play Integrity -->
+                            <div id="tab-pi" class="term-pane hidden space-y-1">
+                                <p class="text-cyan-400 font-bold">[+] GOOGLE PLAY INTEGRITY API TEST</p>
+                                <p class="text-gray-400">Testing token validation against Google Server...</p>
+                                <p class="text-emerald-400">[✓] MEETS_BASIC_INTEGRITY : TRUE</p>
+                                <p class="text-emerald-400">[✓] MEETS_DEVICE_INTEGRITY : TRUE</p>
+                                <p class="text-emerald-400">[✓] MEETS_STRONG_INTEGRITY : TRUE</p>
+                                <p class="text-purple-300">[INFO] Play Protect Certification: CERTIFIED</p>
+                            </div>
+
+                            <!-- Tab M-Banking -->
+                            <div id="tab-mbanking" class="term-pane hidden space-y-1">
+                                <p class="text-yellow-400 font-bold">[+] M-BANKING & FINANCIAL SECURITY TEST</p>
+                                <p>BCA Mobile / MyBCA   : <span class="text-emerald-400 font-bold">PASS (No Root Detected)</span></p>
+                                <p>Livin' by Mandiri      : <span class="text-emerald-400 font-bold">PASS (No Root Detected)</span></p>
+                                <p>BRImo                   : <span class="text-emerald-400 font-bold">PASS (No Root Detected)</span></p>
+                                <p>DANA & GoPay            : <span class="text-emerald-400 font-bold">PASS (No Root Detected)</span></p>
+                                <p>ShopeePay & SeaBank     : <span class="text-emerald-400 font-bold">PASS (No Root Detected)</span></p>
+                                <p class="text-emerald-300 font-semibold mt-2">[RESULT] 100% M-Banking Compatible Guaranteed!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Device Compatibility & Estimator Simulator Section -->
+    <section id="simulator" class="py-16 bg-gray-900/60 border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white">
+                    <i class="fa-solid fa-sliders text-emerald-400 mr-2"></i>Cek Perangkat & Estimasi Biaya
+                </h2>
+                <p class="text-gray-400 text-sm sm:text-base mt-2">
+                    Simulasikan kompatibilitas HP Anda, metode oprek yang direkomendasikan, serta kisaran harga dan estimasi waktu pengerjaan.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Inputs Form -->
+                <div class="lg:col-span-6 glass-card p-6 sm:p-8 rounded-2xl border border-gray-800 space-y-5">
+                    <h3 class="text-lg font-bold text-white flex items-center gap-2 border-b border-gray-800 pb-3">
+                        <i class="fa-solid fa-mobile-screen-button text-cyan-400"></i> Spesifikasi Perangkat Anda
+                    </h3>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Merek / Brand HP</label>
+                            <select id="sim-brand" onchange="runEstimator()" class="w-full bg-gray-950 border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none">
+                                <option value="Xiaomi">Xiaomi / Poco / Redmi</option>
+                                <option value="Samsung">Samsung Galaxy</option>
+                                <option value="Realme">Realme / Oppo / Vivo</option>
+                                <option value="Google Pixel">Google Pixel</option>
+                                <option value="Asus/ROG">Asus / ROG Phone</option>
+                                <option value="Transsion">Infinix / Tecno / Itel</option>
+                                <option value="iPhone">Apple iPhone / iPad</option>
+                                <option value="Lainnya">Merek Lainnya</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Versi OS Saat Ini</label>
+                            <select id="sim-os" onchange="runEstimator()" class="w-full bg-gray-950 border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none">
+                                <option value="Android 14/15">Android 14 / 15 (HyperOS / OneUI 6)</option>
+                                <option value="Android 12/13">Android 12 / 13 (MIUI 13-14 / OneUI 4-5)</option>
+                                <option value="Android 10/11">Android 10 / 11</option>
+                                <option value="iOS 15-16">iOS 15.0 - 16.7</option>
+                                <option value="iOS 17+">iOS 17.0+</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Target Layanan Utama</label>
+                        <select id="sim-target" onchange="runEstimator()" class="w-full bg-gray-950 border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none">
+                            <option value="Root KSU & M-Banking">Root KernelSU + Bypass M-Banking & Play Integrity</option>
+                            <option value="UBL & Root Basic">Unlock Bootloader (UBL) + Root Basic Magisk/APatch</option>
+                            <option value="Custom ROM & Tuning">Custom ROM + Gaming Thermal Kernel Tuning</option>
+                            <option value="iOS Jailbreak">Jailbreak iOS (Dopamine / Palera1n)</option>
+                            <option value="Unbrick EDL">Repair Bootloop / Unbrick EDL Auth</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Status Bootloader</label>
+                        <select id="sim-ubl" onchange="runEstimator()" class="w-full bg-gray-950 border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none">
+                            <option value="Belum UBL">Terkunci / Belum Unlock Bootloader (UBL)</option>
+                            <option value="Sudah UBL">Sudah Unlock Bootloader (UBL)</option>
+                            <option value="Tidak Tahu">Tidak Yakin / Minta Dicek Admin</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Outputs Display -->
+                <div class="lg:col-span-6 glass-card p-6 sm:p-8 rounded-2xl border border-emerald-500/40 relative glow-emerald space-y-6">
+                    <div class="flex items-center justify-between border-b border-gray-800 pb-3">
+                        <h3 class="text-lg font-bold text-emerald-400 flex items-center gap-2">
+                            <i class="fa-solid fa-microchip"></i> Hasil Analisis & Estimasi
+                        </h3>
+                        <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Auto Simulator</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-950/70 p-4 rounded-xl border border-gray-800">
+                            <span class="text-xs text-gray-400 block font-medium">Tingkat Kompatibilitas</span>
+                            <span id="res-compat" class="text-xl sm:text-2xl font-black text-emerald-400">98% (Sangat Tinggi)</span>
+                        </div>
+                        <div class="bg-gray-950/70 p-4 rounded-xl border border-gray-800">
+                            <span class="text-xs text-gray-400 block font-medium">Estimasi Waktu</span>
+                            <span id="res-time" class="text-xl sm:text-2xl font-black text-cyan-400">45 - 90 Menit</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-950/70 p-4 rounded-xl border border-gray-800 space-y-2">
+                        <span class="text-xs text-gray-400 block font-medium">Metode & Tools Direkomendasikan</span>
+                        <div id="res-method" class="text-sm font-mono text-purple-300 font-semibold">
+                            KernelSU LKM + SusFS + Zygisk Next + PIFix Mod
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between bg-gradient-to-r from-emerald-950/60 to-cyan-950/60 p-4 rounded-xl border border-emerald-500/30">
+                        <div>
+                            <span class="text-xs text-gray-300 block">Perkiraan Biaya Oprek</span>
+                            <span id="res-price" class="text-2xl font-black text-white">Rp 150.000</span>
+                        </div>
+                        <button onclick="applySimulatorToForm()" class="px-5 py-2.5 rounded-xl text-xs font-extrabold uppercase tracking-wider bg-emerald-400 text-black hover:bg-emerald-300 transition-all flex items-center gap-2 shadow-md shadow-emerald-400/20">
+                            <i class="fa-solid fa-square-check"></i> Gunakan Data Ini
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid Section -->
+    <section id="layanan" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-mono text-emerald-400 tracking-widest uppercase bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">SOLUSI LENGKAP OPREK SMARTPHONE</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Layanan Oprek HP Specialist</h2>
+                <p class="text-gray-400 text-sm sm:text-base mt-2">Dikerjakan oleh teknisi berpengalaman dengan standar prosedur keamanan tinggi tanpa merusak komponen hardware.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service Card 1 -->
+                <div class="glass-card p-6 rounded-2xl border border-gray-800 hover:border-emerald-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-terminal"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">KernelSU & APatch Stealth Root</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Root generasi terbaru berbasis kernel (Kernel-level hook). Tidak terdeteksi oleh sistem keamanan aplikasi keuangan dan game anti-cheat.
+                    </p>
+                    <ul class="mt-4 space-y-2 text-xs font-mono text-gray-300">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Zero-trace Kernel Hook</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Support Android 12, 13, 14, 15</li>
                     </ul>
                 </div>
 
-                <!-- Col 3: Contact Info -->
-                <div>
-                    <h4 class="text-xs font-mono font-bold text-white uppercase tracking-wider mb-4">Jam Operasional</h4>
-                    <p class="text-xs text-slate-300 font-mono">Senin - Minggu</p>
-                    <p class="text-xs text-cyber-neon font-mono mb-3">09.00 WIB - 22.00 WIB</p>
-                    <p class="text-xs text-slate-400">Workshop & Remote Desk Service Available Indonesia-wide</p>
+                <!-- Service Card 2 -->
+                <div class="glass-card p-6 rounded-2xl border border-gray-800 hover:border-cyan-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Play Integrity & M-Banking Fix</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Bypass sertifikasi Google Play Integrity (MEETS_DEVICE_INTEGRITY & MEETS_STRONG_INTEGRITY) agar semua aplikasi bank & e-wallet berjalan normal.
+                    </p>
+                    <ul class="mt-4 space-y-2 text-xs font-mono text-gray-300">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> BCA, Mandiri, BRI, BNI Pass</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-400"></i> DANA, GoPay, ShopeePay Pass</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="glass-card p-6 rounded-2xl border border-gray-800 hover:border-purple-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-compact-disc"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Custom ROM & Gaming Tuning</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Instalasi Pixel Experience, LineageOS, EvolutionX, CRDroid + Thermal Engine Unlock & Refresh Rate Tweak untuk pengalaman gaming anti-lag.
+                    </p>
+                    <ul class="mt-4 space-y-2 text-xs font-mono text-gray-300">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-400"></i> Unlimited Google Photos Storage</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-400"></i> High FPS Gaming Mod</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="glass-card p-6 rounded-2xl border border-gray-800 hover:border-amber-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-apple"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">iOS Jailbreak & Tweak Setup</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Layanan Jailbreak iPhone / iPad menggunakan Dopamine, Palera1n, atau XinaA15. Pemasangan tweak lokasi (fake GPS), CarBridge, & customization.
+                    </p>
+                    <ul class="mt-4 space-y-2 text-xs font-mono text-gray-300">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Rootless Jailbreak Stability</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Safe Bypass Detection</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="glass-card p-6 rounded-2xl border border-gray-800 hover:border-blue-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">De-Google & Privacy OS</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Hapus total layanan pelacakan Google & Telemetri vendor. Pemasangan GrapheneOS, CalyxOS, atau microG untuk privasi maksimal kelas tinggi.
+                    </p>
+                    <ul class="mt-4 space-y-2 text-xs font-mono text-gray-300">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-400"></i> Hardened Privacy Security</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-blue-400"></i> Battery Life Optimization</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="glass-card p-6 rounded-2xl border border-gray-800 hover:border-rose-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 text-xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-wrench"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Unbrick & EDL Repair</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Perbaikan HP mati total, bootloop, mati suri pasca salah flash, hardbrick EDL mode dengan Authorized Account Xiaomi/Qualcomm tool.
+                    </p>
+                    <ul class="mt-4 space-y-2 text-xs font-mono text-gray-300">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-rose-400"></i> EDL Test Point Flashing</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-rose-400"></i> Save Partition & Data Repair</li>
+                    </ul>
                 </div>
 
             </div>
+        </div>
+    </section>
 
-            <div class="pt-8 border-t border-cyber-border/60 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 font-mono gap-4">
-                <p>&copy; 2026 CYBERTWEAK Studio. All rights reserved.</p>
-                <p class="text-[11px] text-slate-600">Disclaimer: Mengoprek software perangkat berpotensi membatalkan garansi resmi pabrikan.</p>
+    <!-- M-Banking & Play Integrity Guarantee Showcase Section -->
+    <section id="garansi" class="py-16 bg-gray-900/40 border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 border border-emerald-500/30 relative overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-4">
+                        <span class="px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">100% SECURE FINANCIAL APPS</span>
+                        <h2 class="text-2xl sm:text-4xl font-extrabold text-white">M-Banking & Play Integrity Pass Guarantee</h2>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Khawatir M-Banking keblokir setelah di-oprek? Kami menggunakan <strong class="text-emerald-400">KernelSU Direct System Hook</strong> dan <strong class="text-cyan-400">Play Integrity Fix Module Mod</strong> khusus. Jika aplikasi bank Anda terdeteksi dalam 30 hari garansi, kami perbaiki secara GRATIS atau uang kembali.
+                        </p>
+
+                        <!-- Apps Grid Status -->
+                        <div class="pt-4 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                            <div class="p-2.5 rounded-xl bg-gray-950/80 border border-gray-800 flex items-center justify-between">
+                                <span class="text-xs font-medium text-gray-200">BCA Mobile / MyBCA</span>
+                                <span class="text-xs font-bold text-emerald-400">PASS ✓</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-gray-950/80 border border-gray-800 flex items-center justify-between">
+                                <span class="text-xs font-medium text-gray-200">Livin' Mandiri</span>
+                                <span class="text-xs font-bold text-emerald-400">PASS ✓</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-gray-950/80 border border-gray-800 flex items-center justify-between">
+                                <span class="text-xs font-medium text-gray-200">BRImo / BNI Touch</span>
+                                <span class="text-xs font-bold text-emerald-400">PASS ✓</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-gray-950/80 border border-gray-800 flex items-center justify-between">
+                                <span class="text-xs font-medium text-gray-200">DANA & GoPay</span>
+                                <span class="text-xs font-bold text-emerald-400">PASS ✓</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-gray-950/80 border border-gray-800 flex items-center justify-between">
+                                <span class="text-xs font-medium text-gray-200">ShopeePay / SeaBank</span>
+                                <span class="text-xs font-bold text-emerald-400">PASS ✓</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-gray-950/80 border border-gray-800 flex items-center justify-between">
+                                <span class="text-xs font-medium text-gray-200">MLBB / Wild Rift</span>
+                                <span class="text-xs font-bold text-emerald-400">PASS ✓</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 text-center flex flex-col items-center justify-center p-6 bg-gray-950/60 rounded-2xl border border-gray-800">
+                        <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-emerald-500 to-cyan-400 flex items-center justify-center text-black text-3xl shadow-xl shadow-emerald-500/20 mb-4">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <h4 class="text-xl font-extrabold text-white">Garansi Full 30 Hari</h4>
+                        <p class="text-xs text-gray-400 mt-2 max-w-xs">Bebas konsultasi, update module jika Google update Play Integrity, dan re-patch gratis.</p>
+                        <a href="#order-section" class="mt-5 px-6 py-2.5 rounded-xl bg-emerald-500 text-black font-extrabold text-xs uppercase tracking-wider hover:bg-emerald-400 transition-all">
+                            Order Dengan Garansi
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transparent Pricing Packages -->
+    <section id="harga" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-mono text-cyan-400 tracking-widest uppercase bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">HARGA TRANSPARAN & TANPA BIAYA TERSEMBUNYI</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Pilihan Paket Jasa Oprek</h2>
+                <p class="text-gray-400 text-sm sm:text-base mt-2">Pilih paket oprek yang sesuai dengan kebutuhan HP dan aktivitas harian Anda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Package 1 -->
+                <div class="glass-card rounded-2xl p-6 sm:p-8 border border-gray-800 hover:border-gray-700 transition-all flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-mono text-gray-400 uppercase">Entry Level</span>
+                        <h3 class="text-xl font-extrabold text-white mt-1">Basic Root & UBL</h3>
+                        <div class="my-4">
+                            <span class="text-3xl font-black text-white">Rp 100.000</span>
+                            <span class="text-xs text-gray-400">/ per perangkat</span>
+                        </div>
+                        <ul class="space-y-3 text-xs text-gray-300 font-mono mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Unlock Bootloader (UBL)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Magisk / APatch Root</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Basic SafetyNet Fix</li>
+                            <li class="flex items-center gap-2 text-gray-500"><i class="fa-solid fa-xmark"></i> KernelSU Direct Hook</li>
+                            <li class="flex items-center gap-2 text-gray-500"><i class="fa-solid fa-xmark"></i> Garansi M-Banking 30 Hari</li>
+                        </ul>
+                    </div>
+                    <button onclick="selectPackage('Paket Basic Root & UBL - Rp 100.000')" class="w-full py-3 rounded-xl font-bold text-xs uppercase tracking-wider bg-gray-800 text-white hover:bg-gray-700 transition-all border border-gray-700">
+                        Pilih Paket Basic
+                    </button>
+                </div>
+
+                <!-- Package 2 (Popular) -->
+                <div class="glass-card rounded-2xl p-6 sm:p-8 border-2 border-emerald-500 relative glow-emerald flex flex-col justify-between transform md:-translate-y-2">
+                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-emerald-500 to-cyan-500 text-black text-xs font-extrabold uppercase tracking-wider shadow-md">
+                        MOST POPULAR GAMER & BANKING
+                    </div>
+                    <div>
+                        <span class="text-xs font-mono text-emerald-400 uppercase">Pro Performance</span>
+                        <h3 class="text-xl font-extrabold text-white mt-1">Pro Gamer & Banking</h3>
+                        <div class="my-4">
+                            <span class="text-3xl font-black text-emerald-400">Rp 175.000</span>
+                            <span class="text-xs text-gray-400">/ per perangkat</span>
+                        </div>
+                        <ul class="space-y-3 text-xs text-gray-300 font-mono mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> KernelSU / Magisk Alpha Hook</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Play Integrity STRONG Fix</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> 100% Bypass M-Banking All Bank</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Thermal Unlock + Refresh Rate Mod</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Garansi Full 30 Hari</li>
+                        </ul>
+                    </div>
+                    <button onclick="selectPackage('Paket Pro Gamer & Banking - Rp 175.000')" class="w-full py-3 rounded-xl font-extrabold text-xs uppercase tracking-wider bg-gradient-to-r from-emerald-500 to-cyan-500 text-black hover:from-emerald-400 hover:to-cyan-400 transition-all shadow-lg shadow-emerald-500/20">
+                        Pilih Paket Pro
+                    </button>
+                </div>
+
+                <!-- Package 3 -->
+                <div class="glass-card rounded-2xl p-6 sm:p-8 border border-gray-800 hover:border-gray-700 transition-all flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-mono text-purple-400 uppercase">Ultimate Suite</span>
+                        <h3 class="text-xl font-extrabold text-white mt-1">Custom ROM & Tuning</h3>
+                        <div class="my-4">
+                            <span class="text-3xl font-black text-white">Rp 250.000</span>
+                            <span class="text-xs text-gray-400">/ per perangkat</span>
+                        </div>
+                        <ul class="space-y-3 text-xs text-gray-300 font-mono mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Flash Custom ROM (Pixel / EvoX)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> KernelSU + Complete Stealth Root</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Unlimited Google Photos Storage</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Play Integrity & M-Banking Safe</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Priority Lifetime Consultation</li>
+                        </ul>
+                    </div>
+                    <button onclick="selectPackage('Paket Custom ROM & Tuning - Rp 250.000')" class="w-full py-3 rounded-xl font-bold text-xs uppercase tracking-wider bg-gray-800 text-white hover:bg-gray-700 transition-all border border-gray-700">
+                        Pilih Paket Custom ROM
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-gray-900/50 border-t border-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white">Pertanyaan Sering Diajukan (FAQ)</h2>
+                <p class="text-gray-400 text-sm mt-2">Semua hal penting yang perlu Anda ketahui sebelum melakukan oprek HP.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="glass-card rounded-xl border border-gray-800 overflow-hidden">
+                    <button onclick="toggleFaq('faq-1')" class="w-full text-left p-5 flex items-center justify-between font-semibold text-white focus:outline-none">
+                        <span>Apakah data HP akan terhapus saat proses oprek?</span>
+                        <i id="faq-1-icon" class="fa-solid fa-chevron-down text-emerald-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-1" class="hidden px-5 pb-5 text-gray-300 text-xs sm:text-sm leading-relaxed border-t border-gray-800/60 pt-3">
+                        Proses Unlock Bootloader (UBL) pertama kali akan melakukan factory reset otomatis sesuai regulasi keamanan pabrikan. Kami sangat menyarankan Anda melakukan backup data penting (foto, kontak, chat WhatsApp) terlebih dahulu. Jika HP Anda sudah dalam status UBL unlocked, proses root/patch KernelSU tidak akan menghapus data.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="glass-card rounded-xl border border-gray-800 overflow-hidden">
+                    <button onclick="toggleFaq('faq-2')" class="w-full text-left p-5 flex items-center justify-between font-semibold text-white focus:outline-none">
+                        <span>Apakah M-Banking (BCA, Mandiri, BRI, DANA) tetap bisa digunakan?</span>
+                        <i id="faq-2-icon" class="fa-solid fa-chevron-down text-emerald-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-2" class="hidden px-5 pb-5 text-gray-300 text-xs sm:text-sm leading-relaxed border-t border-gray-800/60 pt-3">
+                        Ya, 100% BISA. Kami menggunakan metode KernelSU / APatch / Magisk Alpha terbaru yang berjalan di sistem kernel level, dikombinasikan dengan Zygisk Next & SusFS Module untuk menyembunyikan status root secara sempurna dari semua aplikasi finansial & Play Integrity API.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="glass-card rounded-xl border border-gray-800 overflow-hidden">
+                    <button onclick="toggleFaq('faq-3')" class="w-full text-left p-5 flex items-center justify-between font-semibold text-white focus:outline-none">
+                        <span>Bagaimana cara pengerjaannya? Apakah bisa remote jarak jauh?</span>
+                        <i id="faq-3-icon" class="fa-solid fa-chevron-down text-emerald-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-3" class="hidden px-5 pb-5 text-gray-300 text-xs sm:text-sm leading-relaxed border-t border-gray-800/60 pt-3">
+                        Pengerjaan dapat dilakukan melalui **Remote Online** (menggunakan Laptop/PC via UltraViewer/TeamViewer/AnyDesk) untuk hampir semua tipe Android. Jika Anda tidak memiliki PC atau perangkat mengalami bootloop berat / EDL brick, unit bisa dikirimkan ke workshop kami atau pengerjaan COD (sesuai kesepakatan lokasi).
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="glass-card rounded-xl border border-gray-800 overflow-hidden">
+                    <button onclick="toggleFaq('faq-4')" class="w-full text-left p-5 flex items-center justify-between font-semibold text-white focus:outline-none">
+                        <span>Bagaimana klaim garansi jika di kemudian hari Play Integrity terdeteksi lagi?</span>
+                        <i id="faq-4-icon" class="fa-solid fa-chevron-down text-emerald-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-4" class="hidden px-5 pb-5 text-gray-300 text-xs sm:text-sm leading-relaxed border-t border-gray-800/60 pt-3">
+                        Setiap pengerjaan mendapatkan Garansi 30 Hari. Karena Google terkadang memperbarui fingerprint Play Integrity secara berkala, tim kami akan memberikan patch fingerprint update terbaru secara GRATIS tanpa dipungut biaya tambahan selama masa garansi aktif.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form Section Connected to Apps Script -->
+    <section id="order-section" class="py-20 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl p-6 sm:p-10 border border-emerald-500/40 shadow-2xl shadow-emerald-500/10">
+                
+                <div class="text-center max-w-xl mx-auto mb-8">
+                    <span class="px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 inline-block mb-2">FORM PEMESANAN KILAT</span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-white">Formulir Pesanan Oprek HP</h2>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-1">Isi data di bawah ini. Pesanan Anda akan tersimpan otomatis ke database kami & terhubung langsung dengan tim kami via WhatsApp.</p>
+                </div>
+
+                <!-- Web App Order Form -->
+                <form id="orderForm" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <!-- Nama Lengkap -->
+                        <div>
+                            <label for="nama" class="block text-xs font-semibold text-gray-300 uppercase mb-2">Nama Lengkap <span class="text-red-400">*</span></label>
+                            <input type="text" id="nama" name="nama" required placeholder="Contoh: Budi Santoso" class="w-full bg-gray-950 border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none">
+                        </div>
+
+                        <!-- WhatsApp -->
+                        <div>
+                            <label for="whatsapp" class="block text-xs font-semibold text-gray-300 uppercase mb-2">Nomor WhatsApp Active <span class="text-red-400">*</span></label>
+                            <input type="tel" id="whatsapp" name="whatsapp" required placeholder="Contoh: 081234567890" class="w-full bg-gray-950 border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <!-- Tipe HP -->
+                        <div>
+                            <label for="device" class="block text-xs font-semibold text-gray-300 uppercase mb-2">Merek & Tipe HP Lengkap <span class="text-red-400">*</span></label>
+                            <input type="text" id="device" name="device" required placeholder="Contoh: Xiaomi 13T / Samsung S23" class="w-full bg-gray-950 border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none">
+                        </div>
+
+                        <!-- Paket Layanan -->
+                        <div>
+                            <label for="service" class="block text-xs font-semibold text-gray-300 uppercase mb-2">Pilihan Paket / Layanan <span class="text-red-400">*</span></label>
+                            <select id="service" name="service" required class="w-full bg-gray-950 border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none">
+                                <option value="">-- Pilih Paket Layanan --</option>
+                                <option value="Paket Pro Gamer & Banking - Rp 175.000">Paket Pro Gamer & M-Banking (Rp 175.000)</option>
+                                <option value="Paket Basic Root & UBL - Rp 100.000">Paket Basic Root & UBL (Rp 100.000)</option>
+                                <option value="Paket Custom ROM & Tuning - Rp 250.000">Paket Custom ROM & Tuning (Rp 250.000)</option>
+                                <option value="iOS Jailbreak Setup - Rp 200.000">iOS Jailbreak & Tweak (Rp 200.000)</option>
+                                <option value="Unbrick & EDL Repair - Rp 200.000">Unbrick / Perbaikan Bootloop (Rp 200.000)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Metode Pengerjaan -->
+                    <div>
+                        <label for="method" class="block text-xs font-semibold text-gray-300 uppercase mb-2">Pilihan Metode Pengerjaan <span class="text-red-400">*</span></label>
+                        <select id="method" name="method" required class="w-full bg-gray-950 border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none">
+                            <option value="Remote PC (TeamViewer/UltraViewer)">Remote Jarak Jauh via Laptop/PC (TeamViewer / UltraViewer)</option>
+                            <option value="Kirim Unit ke Workshop">Kirim Unit HP ke Workshop (JNE/J&T/Sicepat)</option>
+                            <option value="COD / Datang Langsung">COD / Datang Langsung ke Lokasi</option>
+                        </select>
+                    </div>
+
+                    <!-- Catatan / Detail Spesifikasi -->
+                    <div>
+                        <label for="catatan" class="block text-xs font-semibold text-gray-300 uppercase mb-2">Catatan Keluhan / Versi OS Saat Ini</label>
+                        <textarea id="catatan" name="catatan" rows="3" placeholder="Contoh: Android 14 HyperOS, mau dipasang KernelSU buat Livin Mandiri dan game MLBB high FPS." class="w-full bg-gray-950 border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none resize-none"></textarea>
+                    </div>
+
+                    <!-- Submission Action Buttons -->
+                    <div class="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        
+                        <!-- Button 1: Submit Only to Database -->
+                        <button type="submit" id="btn-db-only" onclick="setSubmitTarget('db_only')" class="w-full py-4 rounded-xl font-extrabold text-xs uppercase tracking-wider bg-gray-800 text-emerald-400 border border-emerald-500/40 hover:bg-gray-700 transition-all flex items-center justify-center gap-2">
+                            <span id="spinner-db" class="hidden"><i class="fa-solid fa-spinner animate-spin"></i></span>
+                            <i class="fa-solid fa-database" id="icon-db"></i> Kirim Pesanan ke Database
+                        </button>
+
+                        <!-- Button 2: Submit to Database & Open WhatsApp -->
+                        <button type="submit" id="btn-wa-direct" onclick="setSubmitTarget('wa_direct')" class="w-full py-4 rounded-xl font-extrabold text-xs uppercase tracking-wider bg-gradient-to-r from-emerald-500 to-cyan-500 text-black hover:from-emerald-400 hover:to-cyan-400 transition-all shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2">
+                            <span id="spinner-wa" class="hidden"><i class="fa-solid fa-spinner animate-spin text-black"></i></span>
+                            <i class="fa-brands fa-whatsapp text-lg" id="icon-wa"></i> Simpan & Lanjut Chat WhatsApp
+                        </button>
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Notification Toast / Modal Confirmation -->
+    <div id="modal-status" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="glass-card max-w-md w-full rounded-2xl p-6 border border-emerald-500/50 shadow-2xl space-y-4 text-center">
+            <div id="modal-icon-box" class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center text-2xl mx-auto">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            
+            <h3 id="modal-title" class="text-xl font-bold text-white">Pesanan Berhasil Terkirim!</h3>
+            <p id="modal-desc" class="text-xs text-gray-300 leading-relaxed">
+                Data pesanan oprek Anda telah tercatat dengan aman di database kami. Admin kami akan segera menghubungi nomor WhatsApp Anda.
+            </p>
+
+            <div id="modal-summary" class="bg-gray-950 p-3 rounded-xl border border-gray-800 text-left font-mono text-xs text-gray-300 space-y-1">
+                <!-- Dynamic order data summary insertion -->
+            </div>
+
+            <button onclick="closeModalStatus()" class="w-full py-3 rounded-xl bg-emerald-500 text-black font-extrabold text-xs uppercase tracking-wider hover:bg-emerald-400 transition-all">
+                Tutup Selesai
+            </button>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Callout Widget -->
+    <a href="https://wa.me/6281234567890?text=Halo%20Admin%20OprekX,%20saya%20ingin%20tanya%20jasa%20oprek%20HP" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-500 text-black flex items-center justify-center text-2xl shadow-xl shadow-emerald-500/40 hover:scale-110 transition-transform group">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="absolute right-16 bg-gray-900 text-white text-xs font-semibold px-3 py-1.5 rounded-xl border border-gray-700 shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+            Konsultasi Gratis WA
+        </span>
+    </a>
+
+    <!-- Footer Section -->
+    <footer class="border-t border-gray-800 bg-gray-950/80 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center text-black font-bold text-sm">
+                        <i class="fa-solid fa-terminal"></i>
+                    </div>
+                    <span class="text-lg font-extrabold text-white">OPREKX CYBER LAB</span>
+                </div>
+                <p class="text-xs text-gray-500 max-w-md">
+                    Disclaimer: Jasa oprek HP dilakukan atas permintaan & izin penuh pemilik perangkat. Seluruh data privasi pengguna dijamin aman.
+                </p>
+                <div class="text-xs text-gray-400 font-mono">
+                    &copy; 2026 OprekX Lab. All rights reserved.
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- FLOATING WHATSAPP BUTTON -->
-    <div class="fixed bottom-6 right-6 z-50 flex items-center gap-3">
-        <!-- Floating Tooltip badge -->
-        <div class="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900 border border-cyber-cyan/40 text-xs font-mono text-slate-200 shadow-xl animate-bounce">
-            <span class="w-2 h-2 rounded-full bg-cyber-neon"></span>
-            <span>Butuh bantuan oprek? Chat Teknisi</span>
-        </div>
-        
-        <a href="https://wa.me/6281234567890?text=Halo%20CyberTweak,%20saya%20mau%20tanya%20jasa%20oprek%20HP" target="_blank" rel="noopener noreferrer" class="w-14 h-14 rounded-full bg-gradient-to-tr from-emerald-500 to-cyber-neon text-cyber-black flex items-center justify-center text-2xl shadow-xl shadow-emerald-500/30 hover:scale-110 transition-all duration-300">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-    </div>
-
-    <!-- JAVASCRIPT LOGIC -->
+    <!-- JavaScript Logic & Google Apps Script Integration -->
     <script>
-        // 1. Mobile Menu Toggle Logic
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
+        // Exact Google Apps Script Web App Endpoint URL
+        const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxGxY9r8eciffpYPoBWMEfXwWgJdZN-KkeQFCZ8wMxQ0yujTmW6n73L5pnsJCecCD31/exec";
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        let currentSubmitTarget = 'db_only';
 
-        // Close mobile menu on click link
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // 2. Interactive Terminal Tab Selector
-        const terminalData = {
-            root: `
-<div class="space-y-1.5">
-    <p class="text-slate-500"># Initializing Magisk & KernelSU Flash Script...</p>
-    <p><span class="text-cyber-cyan">sys@cybertweak:~$</span> adb devices</p>
-    <p class="text-cyber-neon">List of devices attached: 89f4ac012 device</p>
-    <p><span class="text-cyber-cyan">sys@cybertweak:~$</span> fastboot boot twrp-recovery.img</p>
-    <p class="text-amber-400">-> Booting custom recovery image... SUCCESS</p>
-    <p><span class="text-cyber-cyan">sys@cybertweak:~$</span> ksud install --zygisk --shamiko</p>
-    <p class="text-cyber-neon">[+] KernelSU v1.0.1 Installed into boot.img</p>
-    <p class="text-cyber-neon">[+] Play Integrity Fix: MEETS_DEVICE_INTEGRITY (PASS)</p>
-    <p class="text-white font-bold animate-pulse mt-2">[SUCCESS] Root & Security Bypass Completed!</p>
-</div>
-`,
-            rom: `
-<div class="space-y-1.5">
-    <p class="text-slate-500"># Flashing Custom ROM PixelOS Android 14...</p>
-    <p><span class="text-cyber-cyan">sys@cybertweak:~$</span> fastboot -w wipe data/cache</p>
-    <p class="text-slate-400">Erasing 'userdata'... OKAY [ 1.24s]</p>
-    <p><span class="text-cyber-cyan">sys@cybertweak:~$</span> fastboot update PixelOS_Evolution_v14.zip</p>
-    <p class="text-cyber-cyan">Flashing payload.bin (System, Vendor, Product)...</p>
-    <p class="text-cyber-neon">[100%] System image written successfully</p>
-    <p class="text-cyber-neon">[+] GApps & Pixel Launcher Pre-integrated</p>
-    <p class="text-white font-bold animate-pulse mt-2">[SUCCESS] Custom ROM Flashed! Rebooting System...</p>
-</div>
-`,
-            game: `
-<div class="space-y-1.5">
-    <p class="text-slate-500"># Applying Gaming Performance & Thermal Mods...</p>
-    <p><span class="text-cyber-cyan">sys@cybertweak:~$</span> adb shell pm uninstall -k --user 0 com.miui.analytics</p>
-    <p class="text-slate-400">Success (Bloatware removed)</p>
-    <p><span class="text-cyber-cyan">sys@cybertweak:~$</span> setprop debug.performance.tuning 1</p>
-    <p><span class="text-cyber-cyan">sys@cybertweak:~$</span> apply_thermal_mod --disable-throttling --unlock-fps</p>
-    <p class="text-purple-400">[+] Refresh Rate Forced: 120Hz Constant</p>
-    <p class="text-purple-400">[+] Touch Sampling Rate Set: 480Hz</p>
-    <p class="text-white font-bold animate-pulse mt-2">[SUCCESS] Gaming Optimizations Active!</p>
-</div>
-`
-        };
-
-        function setTerminalTab(type) {
-            const contentContainer = document.getElementById('terminal-content');
-            
-            // Reset tab styles
-            document.querySelectorAll('#tab-root, #tab-rom, #tab-game').forEach(btn => {
-                btn.className = "px-3 py-1 rounded text-slate-400 hover:text-white";
-            });
-
-            // Set active tab style
-            const activeTab = document.getElementById(`tab-${type}`);
-            if (activeTab) {
-                activeTab.className = "px-3 py-1 rounded bg-cyber-card text-cyber-cyan font-semibold border border-cyber-cyan/30";
-            }
-
-            // Set terminal text
-            contentContainer.innerHTML = terminalData[type] || terminalData.root;
+        function setSubmitTarget(target) {
+            currentSubmitTarget = target;
         }
 
-        // Initialize terminal content on load
-        setTerminalTab('root');
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
 
-        // 3. Device Compatibility & Pricing Estimator
-        function calculateCompatibility() {
-            const brand = document.getElementById('brandSelect').value;
-            const service = document.getElementById('serviceSelect').value;
+        // Interactive Terminal Simulator Tabs Switcher
+        function switchTerminalTab(tabId) {
+            document.querySelectorAll('.term-pane').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.term-tab').forEach(btn => {
+                btn.classList.remove('bg-gray-800', 'text-emerald-400', 'border-t', 'border-x', 'border-gray-700');
+                btn.classList.add('text-gray-400');
+            });
 
-            const timeEl = document.getElementById('estTime');
-            const noteEl = document.getElementById('estNote');
-            const integrityEl = document.getElementById('estIntegrity');
-            const priceEl = document.getElementById('estPrice');
-            const statusBadge = document.getElementById('statusBadge');
+            const targetPane = document.getElementById(tabId);
+            const targetBtn = document.getElementById('btn-' + tabId);
 
-            let time = "30 - 60 Menit";
-            let note = "Proses aman dengan jaminan anti-bootloop.";
-            let integrity = "100% Pass Device Integrity (M-Banking Aman)";
-            let price = "Rp 100.000 - Rp 150.000";
-
-            // Brand adjustments
-            if (brand === 'xiaomi') {
-                note = "Sistem Xiaomi HyperOS/MIUI butuh verifikasi UBL. Jika sudah UBL, pengerjaan cepat 30-45 menit.";
-            } else if (brand === 'samsung') {
-                note = "Knox akan ter-trigger saat root. Aplikasi Samsung Pass/Pay nonaktif, namun M-Banking tetap 100% aman.";
-            } else if (brand === 'rog') {
-                note = "Optimasi khusus bypass thermal throttling ROG Armoury Crate support.";
-                price = "Rp 120.000 - Rp 180.000";
-            } else if (brand === 'pixel') {
-                note = "Google Pixel sangat mudah di-UBL tanpa waktu tunggu (Instant UBL).";
-            } else if (brand === 'ios') {
-                note = "Dukungan Jailbreak tergantung versi iOS (iOS 14.0 - 16.5 / Dopamine / Palera1n).";
-                time = "45 - 90 Menit";
-                price = "Rp 100.000 - Rp 200.000";
+            if (targetPane) targetPane.classList.remove('hidden');
+            if (targetBtn) {
+                targetBtn.classList.add('bg-gray-800', 'text-emerald-400', 'border-t', 'border-x', 'border-gray-700');
+                targetBtn.classList.remove('text-gray-400');
             }
+        }
 
-            // Service adjustments
-            if (service === 'gaming_debloat') {
-                time = "20 - 30 Menit";
-                price = "Rp 50.000 - Rp 80.000";
-                integrity = "Tanpa Ubah Root / System Integrity Utuh";
-            } else if (service === 'unbrick') {
-                time = "60 - 120 Menit";
-                price = "Rp 100.000 - Rp 200.000";
-            } else if (service === 'bypass') {
+        // Device Compatibility & Pricing Estimator Simulator Logic
+        function runEstimator() {
+            const brand = document.getElementById('sim-brand').value;
+            const os = document.getElementById('sim-os').value;
+            const target = document.getElementById('sim-target').value;
+            const ubl = document.getElementById('sim-ubl').value;
+
+            let compat = "98% (Sangat Tinggi)";
+            let time = "45 - 90 Menit";
+            let method = "KernelSU LKM + SusFS + Zygisk Next + PIFix Mod";
+            let price = "Rp 175.000";
+
+            if (brand === "iPhone") {
+                compat = "92% (Tergantung iOS)";
                 time = "30 - 60 Menit";
-                price = "Rp 80.000 - Rp 150.000";
+                method = "Dopamine 2.0 / Palera1n Rootless + Choicy Bypass";
+                price = "Rp 200.000";
+            } else if (target === "Custom ROM & Tuning") {
+                compat = "95% (Kompatibel)";
+                time = "1 - 2 Jam";
+                method = "Clean Flash TWRP/OrangeFox + Pixel ROM + Thermal Mod";
+                price = "Rp 250.000";
+            } else if (target === "Unbrick EDL") {
+                compat = "88% (EDL Auth Needed)";
+                time = "1 - 3 Jam / Instant EDL";
+                method = "Qualcomm Test Point EDL Flashing + Authorization Tool";
+                price = "Rp 200.000";
+            } else if (ubl === "Belum UBL" && brand === "Xiaomi") {
+                time = "UBL Wait + 45m Root";
+                method = "Mi Community Authorization / HyperOS UBL Bypass";
+                price = "Rp 175.000";
             }
 
-            timeEl.innerText = time;
-            noteEl.innerText = note;
-            integrityEl.innerText = integrity;
-            priceEl.innerText = price;
-            statusBadge.innerText = "SUPPORTED";
+            document.getElementById('res-compat').innerText = compat;
+            document.getElementById('res-time').innerText = time;
+            document.getElementById('res-method').innerText = method;
+            document.getElementById('res-price').innerText = price;
         }
 
-        function sendCalculatedWhatsApp() {
-            const brand = document.getElementById('brandSelect').options[document.getElementById('brandSelect').selectedIndex].text;
-            const model = document.getElementById('modelInput').value || 'Tidak diisi';
-            const service = document.getElementById('serviceSelect').options[document.getElementById('serviceSelect').selectedIndex].text;
-            const method = document.querySelector('input[name="methodRadio"]:checked').value === 'remote' ? 'Remote Jarak Jauh' : 'Kirim Unit / COD';
+        // Auto Fill Simulator Data into Order Form
+        function applySimulatorToForm() {
+            const brand = document.getElementById('sim-brand').value;
+            const target = document.getElementById('sim-target').value;
+            const os = document.getElementById('sim-os').value;
 
-            const text = `Halo CyberTweak,%0A%0ASaya ingin konsultasi oprek dengan detail:%0A- Brand/Merek: ${encodeURIComponent(brand)}%0A- Tipe HP: ${encodeURIComponent(model)}%0A- Kebutuhan: ${encodeURIComponent(service)}%0A- Metode: ${encodeURIComponent(method)}%0A%0AMohon info ketersediaan slot & kelanjutannya!`;
+            const deviceInput = document.getElementById('device');
+            const serviceSelect = document.getElementById('service');
+            const catatanInput = document.getElementById('catatan');
 
-            window.open(`https://wa.me/6281234567890?text=${text}`, '_blank');
+            deviceInput.value = brand + " (" + os + ")";
+            catatanInput.value = "Estimasi dari Simulator: Target " + target + " pada " + os;
+
+            if (target.includes("Custom ROM")) {
+                serviceSelect.value = "Paket Custom ROM & Tuning - Rp 250.000";
+            } else if (target.includes("Jailbreak")) {
+                serviceSelect.value = "iOS Jailbreak Setup - Rp 200.000";
+            } else if (target.includes("Unbrick")) {
+                serviceSelect.value = "Unbrick & EDL Repair - Rp 200.000";
+            } else if (target.includes("UBL & Root Basic")) {
+                serviceSelect.value = "Paket Basic Root & UBL - Rp 100.000";
+            } else {
+                serviceSelect.value = "Paket Pro Gamer & Banking - Rp 175.000";
+            }
+
+            document.getElementById('order-section').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // 4. FAQ Accordion Toggle
+        // Auto Select Package from Pricing Card Buttons
+        function selectPackage(packageName) {
+            const serviceSelect = document.getElementById('service');
+            serviceSelect.value = packageName;
+            document.getElementById('order-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Toggle FAQ Accordions
         function toggleFaq(id) {
             const el = document.getElementById(id);
-            const icon = document.getElementById(`icon-${id}`);
-
+            const icon = document.getElementById(id + '-icon');
             if (el.classList.contains('hidden')) {
                 el.classList.remove('hidden');
                 icon.classList.add('rotate-180');
@@ -1095,6 +953,143 @@
                 el.classList.add('hidden');
                 icon.classList.remove('rotate-180');
             }
+        }
+
+        // Send Form Data to Google Apps Script Web App
+        async function postToAppsScript(payload) {
+            try {
+                // Method 1: Form UrlEncoded parameters
+                const params = new URLSearchParams();
+                for (const key in payload) {
+                    params.append(key, payload[key]);
+                }
+
+                await fetch(APPS_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: params.toString()
+                });
+                return true;
+            } catch (err) {
+                console.warn("Retrying with text/plain JSON format...", err);
+                try {
+                    // Method 2: Plain JSON string fallback
+                    await fetch(APPS_SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: {
+                            'Content-Type': 'text/plain;charset=utf-8'
+                        },
+                        body: JSON.stringify(payload)
+                    });
+                    return true;
+                } catch (e) {
+                    console.error("Failed to post to Google Apps Script:", e);
+                    return false;
+                }
+            }
+        }
+
+        // Form Submit Handler
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const nama = document.getElementById('nama').value.trim();
+            const whatsapp = document.getElementById('whatsapp').value.trim();
+            const device = document.getElementById('device').value.trim();
+            const service = document.getElementById('service').value;
+            const method = document.getElementById('method').value;
+            const catatan = document.getElementById('catatan').value.trim();
+
+            if (!nama || !whatsapp || !device || !service || !method) {
+                alert("Mohon lengkapi semua kolom wajib (*)");
+                return;
+            }
+
+            const payload = {
+                timestamp: new Date().toLocaleString('id-ID'),
+                nama: nama,
+                whatsapp: whatsapp,
+                device: device,
+                service: service,
+                method: method,
+                catatan: catatan || "-"
+            };
+
+            // Loading state on buttons
+            const btnDb = document.getElementById('btn-db-only');
+            const btnWa = document.getElementById('btn-wa-direct');
+            const spinnerDb = document.getElementById('spinner-db');
+            const spinnerWa = document.getElementById('spinner-wa');
+            const iconDb = document.getElementById('icon-db');
+            const iconWa = document.getElementById('icon-wa');
+
+            btnDb.disabled = true;
+            btnWa.disabled = true;
+
+            if (currentSubmitTarget === 'db_only') {
+                spinnerDb.classList.remove('hidden');
+                iconDb.classList.add('hidden');
+            } else {
+                spinnerWa.classList.remove('hidden');
+                iconWa.classList.add('hidden');
+            }
+
+            // Post to Google Apps Script
+            await postToAppsScript(payload);
+
+            // Reset loading state
+            btnDb.disabled = false;
+            btnWa.disabled = false;
+            spinnerDb.classList.add('hidden');
+            spinnerWa.classList.add('hidden');
+            iconDb.classList.remove('hidden');
+            iconWa.classList.remove('hidden');
+
+            if (currentSubmitTarget === 'wa_direct') {
+                // Format WhatsApp text message
+                const waText = `*FORM PEMESANAN JASA OPREK HP*\n` +
+                               `----------------------------------------\n` +
+                               `👤 *Nama:* ${nama}\n` +
+                               `📱 *HP/Device:* ${device}\n` +
+                               `🛠️ *Paket Layanan:* ${service}\n` +
+                               `⚙️ *Metode:* ${method}\n` +
+                               `📝 *Catatan/OS:* ${catatan || '-'}\n` +
+                               `----------------------------------------\n` +
+                               `_Halo Admin OprekX, saya sudah mengisi form order di website. Mohon diproses._`;
+
+                const cleanWaPhone = whatsapp.replace(/[^0-9]/g, '');
+                const waUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(waText)}`;
+                window.open(waUrl, '_blank');
+            }
+
+            // Show Confirmation Modal
+            openModalStatus(payload);
+            document.getElementById('orderForm').reset();
+        }
+
+        function openModalStatus(data) {
+            const modal = document.getElementById('modal-status');
+            const summary = document.getElementById('modal-summary');
+
+            summary.innerHTML = `
+                <div><strong class="text-emerald-400">Nama:</strong> ${data.nama}</div>
+                <div><strong class="text-emerald-400">Device:</strong> ${data.device}</div>
+                <div><strong class="text-emerald-400">Layanan:</strong> ${data.service}</div>
+                <div><strong class="text-emerald-400">Metode:</strong> ${data.method}</div>
+            `;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModalStatus() {
+            const modal = document.getElementById('modal-status');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
         }
     </script>
 </body>
